@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+    /* fonts */
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-heading: "Roboto", system-ui, sans-serif;
+    --font-mono: ui-monospace, Consolas, monospace;
+
+    /* colours */
+    --color-text: #6b6375;
+    --color-heading: #08060d;
+    --color-bg: #fff;
+    --color-border: #e5e4e7;
+    --color-code-bg: #f4f3ec;
+    --color-accent: #aa3bff;
+}
+
+:root {
+    color-scheme: light;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --accent-bg: rgb(from var(--color-accent) r g b / 0.1);
+    --accent-border: rgb(from var(--color-accent) r g b / 0.5);
+    --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+    /* @media (prefers-color-scheme: dark) */
+}
+
+@layer base {
+    html {
+        font-size: 16px;
+    }
+
+    body {
+        font-family: var(--font-sans);
+        line-height: 1.45;
+        letter-spacing: 0.18px;
+        color: var(--color-text);
+        background: var(--color-bg);
+    }
+
+    h1 {
+        @apply font-heading text-3xl font-bold;
+    }
+
+    h2 {
+        @apply font-heading text-2xl font-semibold;
+    }
+    code {
+        @apply font-mono bg-code-bg
+    }
+}
