@@ -42,14 +42,19 @@
         background: var(--color-bg);
     }
 
-    h1 {
+    :root h1 {
         @apply font-heading text-3xl font-bold;
     }
 
-    h2 {
-        @apply font-heading text-2xl font-semibold;
+    :root h2 {
+        @apply font-heading text-xl font-semibold;
     }
+
+    :root h3 {
+        @apply font-heading text-lg font-semibold;
+    }
+
     code {
-        @apply font-mono bg-code-bg
+        @apply font-mono bg-code-bg;
     }
 }
