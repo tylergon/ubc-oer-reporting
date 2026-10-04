@@ -110,7 +110,8 @@
                 />
             </div>
 
-            <div>
+            <!-- TODO: Fix this w/ a select -->
+            <div> 
                 <label for={`term-year-{index}`}>Academic Period</label>
                 <input
                     type='text'

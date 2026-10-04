@@ -1,0 +1,20 @@
+[tools]
+node = "22"
+python = "3.14"
+uv = "latest"
+
+[env]
+# Auto-create and activate a venv for the crawler
+_.python.venv = { path = "crawler/.venv", create = true }
+
+[tasks.install]
+description = "Install all dependencies"
+depends = ["web:install", "crawler:install"]
+
+[tasks."web:install"]
+dir = "web"
+run = "npm install"
+
+[tasks."crawler:install"]
+dir = "crawler"
+run = "uv sync"
