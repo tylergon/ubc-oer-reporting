@@ -11,4 +11,3 @@ class AcademicCalendarSpider(scrapy.Spider):
         facultyList = contents.xpath("following-sibling::ol[1]")
         for a in facultyList.xpath("./li/a"):
             print(a.xpath("normalize-space()").get(), a.xpath("@href").get())
-        
