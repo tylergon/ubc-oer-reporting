@@ -23,16 +23,13 @@ class Faculty:
 class AcademicUnit:
     id: str | None = None
     name: str | None = None
-    facultyId: str | None = None
-    url: str | None = None
+    faculty_id: str | None = None
     pass
 
 @dataclass
 class AcademicStaff:
-    id: str | None = None
     name: str | None = None
     rank: str | None = None
-    facultyId: str | None = None
-    unitId: str | None = None
-    url: str | None = None
+    faculty_id: str | None = None
+    unit_id: str | None = None
     pass
