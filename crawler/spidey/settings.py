@@ -15,17 +15,17 @@ FEED_EXPORT_ENCODING = "utf-8"
 
 # Configure outputs
 FEEDS = {
-    "output/faculties.csv": {
+    "scratch/scraped_faculties.csv": {
         "format": "csv",
         "item_classes": ["spidey.items.Faculty"],
         "overwrite": True,
     },
-    "output/academic_units.csv": {
+    "scratch/scraped_academic_units.csv": {
         "format": "csv",
         "item_classes": ["spidey.items.AcademicUnit"],
         "overwrite": True,
     },
-    "output/academic_staff.csv": {
+    "scratch/scraped_academic_staff.csv": {
         "format": "csv",
         "item_classes": ["spidey.items.AcademicStaff"],
         "overwrite": True,
