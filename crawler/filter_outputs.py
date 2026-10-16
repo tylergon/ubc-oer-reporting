@@ -26,13 +26,10 @@ staff["unit_id"] = [clean_unit_id(unit) for unit in staff["unit_id"]]
 
 staff = staff[staff['rank'].isin(supported_ranks['rank'])]
 
-print(staff.__len__)
-exit()
-
 # Filter out unused faculties
 accepted = staff["faculty_id"].unique()
 faculties = faculties[faculties['id'].isin(accepted)]
 
 # Write out
-staff.to_json("output/staff.json", index=True)
-faculties.to_json("output/faculties.json", index=True)
+staff.to_json("output/staff.json", orient="records", force_ascii=False)
+faculties.to_json("output/faculties.json", orient="records", force_ascii=False)

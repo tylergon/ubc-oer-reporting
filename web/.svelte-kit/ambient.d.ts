@@ -38,8 +38,8 @@
  * The above values will be the same _even if_ different values for `ENVIRONMENT` or `PUBLIC_BASE_URL` are set at runtime, as they are statically replaced in your code with their build time values.
  */
 declare module '$env/static/private' {
-	export const IMSETTINGS_INTEGRATE_DESKTOP: string;
 	export const SHELL: string;
+	export const IMSETTINGS_INTEGRATE_DESKTOP: string;
 	export const npm_command: string;
 	export const SESSION_MANAGER: string;
 	export const npm_config_userconfig: string;
@@ -70,8 +70,8 @@ declare module '$env/static/private' {
 	export const EDITOR: string;
 	export const XDG_SEAT: string;
 	export const PWD: string;
-	export const LOGNAME: string;
 	export const XDG_SESSION_DESKTOP: string;
+	export const LOGNAME: string;
 	export const XDG_SESSION_TYPE: string;
 	export const npm_config_init_module: string;
 	export const SYSTEMD_EXEC_PID: string;
@@ -91,8 +91,8 @@ declare module '$env/static/private' {
 	export const npm_package_version: string;
 	export const _OLD_VIRTUAL_PATH: string;
 	export const VIRTUAL_ENV: string;
-	export const MEMORY_PRESSURE_WATCH: string;
 	export const PYTHONSTARTUP: string;
+	export const MEMORY_PRESSURE_WATCH: string;
 	export const WAYLAND_DISPLAY: string;
 	export const __MISE_DIFF: string;
 	export const GIT_ASKPASS: string;
@@ -246,8 +246,8 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
-		IMSETTINGS_INTEGRATE_DESKTOP: string;
 		SHELL: string;
+		IMSETTINGS_INTEGRATE_DESKTOP: string;
 		npm_command: string;
 		SESSION_MANAGER: string;
 		npm_config_userconfig: string;
@@ -278,8 +278,8 @@ declare module '$env/dynamic/private' {
 		EDITOR: string;
 		XDG_SEAT: string;
 		PWD: string;
-		LOGNAME: string;
 		XDG_SESSION_DESKTOP: string;
+		LOGNAME: string;
 		XDG_SESSION_TYPE: string;
 		npm_config_init_module: string;
 		SYSTEMD_EXEC_PID: string;
@@ -299,8 +299,8 @@ declare module '$env/dynamic/private' {
 		npm_package_version: string;
 		_OLD_VIRTUAL_PATH: string;
 		VIRTUAL_ENV: string;
-		MEMORY_PRESSURE_WATCH: string;
 		PYTHONSTARTUP: string;
+		MEMORY_PRESSURE_WATCH: string;
 		WAYLAND_DISPLAY: string;
 		__MISE_DIFF: string;
 		GIT_ASKPASS: string;
