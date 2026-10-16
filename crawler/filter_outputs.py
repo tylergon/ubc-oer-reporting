@@ -26,6 +26,9 @@ staff["unit_id"] = [clean_unit_id(unit) for unit in staff["unit_id"]]
 
 staff = staff[staff['rank'].isin(supported_ranks['rank'])]
 
+print(staff.__len__)
+exit()
+
 # Filter out unused faculties
 accepted = staff["faculty_id"].unique()
 faculties = faculties[faculties['id'].isin(accepted)]
