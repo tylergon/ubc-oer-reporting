@@ -31,5 +31,5 @@ accepted = staff["faculty_id"].unique()
 faculties = faculties[faculties['id'].isin(accepted)]
 
 # Write out
-staff.to_csv("output/staff.csv", index=True)
-faculties.to_csv("output/faculties.csv", index=True)
+staff.to_json("output/staff.json", index=True)
+faculties.to_json("output/faculties.json", index=True)
