@@ -191,7 +191,7 @@
             Add course
         </button>
 
-        <button type='button' onclick={() => console.log(form)}>Dump</button>
+        <button type='button' onclick={() => console.log(form)}>Dump to console</button>
         <button type='submit'>Submit</button>
     </div>
 </form>

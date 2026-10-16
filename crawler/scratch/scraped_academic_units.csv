@@ -1,0 +1,87 @@
+id,name,faculty_id
+botany,Botany,science
+chemistry,Chemistry,science
+computer-science,Computer Science,science
+"earth,-ocean-and-atmospheric-sciences","Earth, Ocean and Atmospheric Sciences",science
+mathematics,Mathematics,science
+microbiology-and-immunology,Microbiology and Immunology,science
+oceans-and-fisheries,Oceans and Fisheries,science
+"resources,-environment-and-sustainability","Resources, Environment and Sustainability",science
+physics-and-astronomy,Physics and Astronomy,science
+statistics,Statistics,science
+zoology,Zoology,science
+dean's-office,Dean's Office,science
+school-staff,School Staff,nursing
+associated-agencies-with-clinical-staff,Associated Agencies with Clinical Staff,nursing
+"anesthesiology,-pharmacology,-and-therapeutics","Anesthesiology, Pharmacology, and Therapeutics",medicine
+biochemistry-and-molecular-biology,Biochemistry and Molecular Biology,medicine
+cellular-and-physiological-sciences,Cellular and Physiological Sciences,medicine
+dermatology-and-skin-science,Dermatology and Skin Science,medicine
+emergency-medicine,Emergency Medicine,medicine
+family-practice,Family Practice,medicine
+medical-genetics,Medical Genetics,medicine
+medicine,Medicine,medicine
+obstetrics-and-gynaecology,Obstetrics and Gynaecology,medicine
+occupational-science-and-occupational-therapy,Occupational Science and Occupational Therapy,medicine
+ophthalmology-and-visual-sciences,Ophthalmology and Visual Sciences,medicine
+orthopaedics,Orthopaedics,medicine
+pathology-and-laboratory-medicine,Pathology and Laboratory Medicine,medicine
+pediatrics,Pediatrics,medicine
+physical-therapy,Physical Therapy,medicine
+psychiatry,Psychiatry,medicine
+radiology,Radiology,medicine
+surgery,Surgery,medicine
+urologic-sciences,Urologic Sciences,medicine
+applied-biology,Applied Biology,land-and-food-systems
+"food,-nutrition,-and-health","Food, Nutrition, and Health",land-and-food-systems
+food-and-resource-economics,Food and Resource Economics,land-and-food-systems
+office-of-the-dean-and-vice-provost,Office of the Dean and Vice-Provost,graduate-and-postdoctoral-studies
+members,Members,graduate-and-postdoctoral-studies
+forest-resources-management,Forest Resources Management,forestry-and-environmental-stewardship
+forest-and-conservation-sciences,Forest and Conservation Sciences,forestry-and-environmental-stewardship
+wood-science,Wood Science,forestry-and-environmental-stewardship
+student-services,Student Services,forestry-and-environmental-stewardship
+university-research-forests,University Research Forests,forestry-and-environmental-stewardship
+centre-for-early-childhood-education-and-research,Centre for Early Childhood Education and Research,education
+centre-for-interdisciplinary-research-and-collaboration-in-autism,Centre for Interdisciplinary Research and Collaboration in Autism,education
+department-of-curriculum-and-pedagogy,Department of Curriculum and Pedagogy,education
+early-childhood-education-program,Early Childhood Education Program,education
+"department-of-educational-and-counselling-psychology,-and-special-education","Department of Educational and Counselling Psychology, and Special Education",education
+department-of-educational-studies,Department of Educational Studies,education
+indigenous-teacher-education-program-(nitep),Indigenous Teacher Education Program (NITEP),education
+department-of-language-and-literacy-education,Department of Language and Literacy Education,education
+master-of-educational-technology-program,Master of Educational Technology Program,education
+psychological-services-and-counselling-training-centre,Psychological Services and Counselling Training Centre,education
+teacher-education-program,Teacher Education Program,education
+oral-biological-and-medical-sciences,Oral Biological and Medical Sciences,dentistry
+oral-health-sciences,Oral Health Sciences,dentistry
+ancient-mediterranean-and-near-eastern-studies,Ancient Mediterranean and Near Eastern Studies,arts
+anthropology,Anthropology,arts
+"art-history,-visual-art,-and-theory","Art History, Visual Art, and Theory",arts
+asian-studies,Asian Studies,arts
+"central,-eastern-and-northern-european-studies","Central, Eastern and Northern European Studies",arts
+creative-writing,Creative Writing,arts
+economics,Economics,arts
+english-language-and-literatures,English Language and Literatures,arts
+"french,-hispanic-and-italian-studies","French, Hispanic and Italian Studies",arts
+geography,Geography,arts
+history,History,arts
+linguistics,Linguistics,arts
+philosophy,Philosophy,arts
+political-science,Political Science,arts
+psychology,Psychology,arts
+sociology,Sociology,arts
+theatre-and-film,Theatre and Film,arts
+institute-for-critical-indigenous-studies,Institute for Critical Indigenous Studies,arts
+"institute-for-gender,-race,-sexuality-and-social-justice","Institute for Gender, Race, Sexuality and Social Justice",arts
+school-of-public-policy-and-global-affairs,School of Public Policy and Global Affairs,arts
+chemical-and-biological-engineering,Chemical and Biological Engineering,applied-science
+civil-engineering,Civil Engineering,applied-science
+electrical-and-computer-engineering,Electrical and Computer Engineering,applied-science
+engineering-physics-program,Engineering Physics Program,applied-science
+geological-engineering-program,Geological Engineering Program,applied-science
+integrated-engineering-program,Integrated Engineering Program,applied-science
+materials-engineering,Materials Engineering,applied-science
+mechanical-engineering,Mechanical Engineering,applied-science
+mining-engineering,Mining Engineering,applied-science
+dean's-office,Dean's Office,applied-science
