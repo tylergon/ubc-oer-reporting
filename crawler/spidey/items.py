@@ -16,7 +16,6 @@ from dataclasses import dataclass
 class Faculty:
     id: str | None = None
     name: str | None = None
-    url: str | None = None
     pass
 
 @dataclass

@@ -10,18 +10,14 @@ export type ResourceInput = {
 
 export type CourseInput = {
     id: string
-    resources: ResourceInput[]
+    resources: string[]
     courseCode?: string
     termYear?: string
     numStudents?: number
 }
 
 export type FormInput = {
-    firstName?: string
-    lastName?: string
-    emailAddress?: string
-    rank?: string
-    faculty?: string
-    acedemicUnit?: string
+    email?: string
+    resources: ResourceInput[];
     courses: CourseInput[]
 }

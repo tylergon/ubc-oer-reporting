@@ -20,22 +20,13 @@ export const licenceOptions = [
     'Other'
 ] as const;
 
-export const rankOptions: string[] = [
-    'Assistant Professor',
-    'Assistant Professor of Teaching',
-    'Associate Professor',
-    'Associate Professor of Teaching',
-    'Full Professor',
-    'Full Professor of Teaching',
-    'Lecturer',
-    'Postdoctoral Teaching Fellow'
-];
-
 export const termYearOptions = [
-    'FW25',
-    'FW2-25',
+    "2025W1",
+    "2025W2",
+    "2025S1",
+    "2025S2",
+    "2026W1",
+    "2026W2",
+    "2026S1",
+    "2026S2",
 ]
-
-export const facultyOptions: string[] = ['Forestry', 'Computer Science'];
-
-export const unitOptions: string[] = ['Forest Resource Management', 'Urban Forestry']

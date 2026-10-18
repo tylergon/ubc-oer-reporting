@@ -38,8 +38,8 @@
  * The above values will be the same _even if_ different values for `ENVIRONMENT` or `PUBLIC_BASE_URL` are set at runtime, as they are statically replaced in your code with their build time values.
  */
 declare module '$env/static/private' {
-	export const SHELL: string;
 	export const IMSETTINGS_INTEGRATE_DESKTOP: string;
+	export const SHELL: string;
 	export const npm_command: string;
 	export const SESSION_MANAGER: string;
 	export const npm_config_userconfig: string;
@@ -49,11 +49,10 @@ declare module '$env/static/private' {
 	export const npm_config_cache: string;
 	export const XDG_SESSION_PATH: string;
 	export const HISTCONTROL: string;
-	export const _OLD_FISH_PROMPT_OVERRIDE: string;
 	export const XDG_MENU_PREFIX: string;
 	export const TERM_PROGRAM_VERSION: string;
-	export const HOSTNAME: string;
 	export const HISTSIZE: string;
+	export const HOSTNAME: string;
 	export const ICEAUTHORITY: string;
 	export const NODE: string;
 	export const SSH_AUTH_SOCK: string;
@@ -89,7 +88,6 @@ declare module '$env/static/private' {
 	export const _JAVA_AWT_WM_NONREPARENTING: string;
 	export const XDG_CURRENT_DESKTOP: string;
 	export const npm_package_version: string;
-	export const _OLD_VIRTUAL_PATH: string;
 	export const VIRTUAL_ENV: string;
 	export const PYTHONSTARTUP: string;
 	export const MEMORY_PRESSURE_WATCH: string;
@@ -103,8 +101,8 @@ declare module '$env/static/private' {
 	export const INIT_CWD: string;
 	export const CHROME_DESKTOP: string;
 	export const STEAM_FRAME_FORCE_CLOSE: string;
-	export const __MISE_ORIG_PATH: string;
 	export const KDE_SESSION_UID: string;
+	export const __MISE_ORIG_PATH: string;
 	export const EGL_PLATFORM: string;
 	export const INFOPATH: string;
 	export const npm_lifecycle_script: string;
@@ -131,7 +129,6 @@ declare module '$env/static/private' {
 	export const HOMEBREW_REPOSITORY: string;
 	export const XDG_VTNR: string;
 	export const XDG_SESSION_ID: string;
-	export const VIRTUAL_ENV_PROMPT: string;
 	export const MANAGERPIDFDID: string;
 	export const npm_config_user_agent: string;
 	export const npm_execpath: string;
@@ -246,8 +243,8 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
-		SHELL: string;
 		IMSETTINGS_INTEGRATE_DESKTOP: string;
+		SHELL: string;
 		npm_command: string;
 		SESSION_MANAGER: string;
 		npm_config_userconfig: string;
@@ -257,11 +254,10 @@ declare module '$env/dynamic/private' {
 		npm_config_cache: string;
 		XDG_SESSION_PATH: string;
 		HISTCONTROL: string;
-		_OLD_FISH_PROMPT_OVERRIDE: string;
 		XDG_MENU_PREFIX: string;
 		TERM_PROGRAM_VERSION: string;
-		HOSTNAME: string;
 		HISTSIZE: string;
+		HOSTNAME: string;
 		ICEAUTHORITY: string;
 		NODE: string;
 		SSH_AUTH_SOCK: string;
@@ -297,7 +293,6 @@ declare module '$env/dynamic/private' {
 		_JAVA_AWT_WM_NONREPARENTING: string;
 		XDG_CURRENT_DESKTOP: string;
 		npm_package_version: string;
-		_OLD_VIRTUAL_PATH: string;
 		VIRTUAL_ENV: string;
 		PYTHONSTARTUP: string;
 		MEMORY_PRESSURE_WATCH: string;
@@ -311,8 +306,8 @@ declare module '$env/dynamic/private' {
 		INIT_CWD: string;
 		CHROME_DESKTOP: string;
 		STEAM_FRAME_FORCE_CLOSE: string;
-		__MISE_ORIG_PATH: string;
 		KDE_SESSION_UID: string;
+		__MISE_ORIG_PATH: string;
 		EGL_PLATFORM: string;
 		INFOPATH: string;
 		npm_lifecycle_script: string;
@@ -339,7 +334,6 @@ declare module '$env/dynamic/private' {
 		HOMEBREW_REPOSITORY: string;
 		XDG_VTNR: string;
 		XDG_SESSION_ID: string;
-		VIRTUAL_ENV_PROMPT: string;
 		MANAGERPIDFDID: string;
 		npm_config_user_agent: string;
 		npm_execpath: string;

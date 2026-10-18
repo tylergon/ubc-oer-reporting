@@ -6,8 +6,5 @@
 	"/input": [
 		"src/routes/input/+page.server.ts",
 		"src/routes/+layout.ts"
-	],
-	"/test": [
-		"src/routes/+layout.ts"
 	]
 }
