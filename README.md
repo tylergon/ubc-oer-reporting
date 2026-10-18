@@ -1,12 +1,16 @@
 # sv
 
+Notes
+- Instead of a staging schema, all records are inserted with `accepted = false` and should be validated
+
 Requirements from Paul
 
 - [ ] Trim supported ranks found in `crawler/config`
 
 ## Docker
 
-Copy 
+TODO: Write the Dockerfile
+TODO: What is .dockerignore?
 
 ## Data Collection
 
