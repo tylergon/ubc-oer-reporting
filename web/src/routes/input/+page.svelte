@@ -149,11 +149,17 @@
                 onclick={() => removeResource(resource)}
             />
 
-            <div class="field">
+            <div class='flex flex-col gap-2'>
                 <div>
-                    <label for={`resource-type-{i}`}>Type</label>
-                    <select name='resource-type' id='resource-type-{i}' bind:value={resource.type} required>
-                        <option value='' selected disabled hidden>--Please choose an option--</option>
+                    <label class='tag' for={`resource-type-{i}`}>Type</label>
+                    <select
+                        class='field field-select'
+                        name='resource-type'
+                        id='resource-type-{i}'
+                        bind:value={resource.type}
+                        required
+                    >
+                        <option value='' selected disabled hidden>Please choose an option</option>
                         {#each resourceOptions as type}
                             <option value={type}>{type}</option>
                         {/each}
@@ -161,8 +167,9 @@
                 </div>
 
                 <div>
-                    <label for={`resource-url-{i}`}>URL</label>
+                    <label class='tag' for={`resource-url-{i}`}>URL</label>
                     <input 
+                        class='field'
                         type='url'
                         name={`resource-url-{resource.id}`}
                         id={`resource-url-{resource.id}`}
@@ -173,9 +180,9 @@
                 </div>
 
                 <div>
-                    <label for={`resource-license-{resource.id}`}>Resource license</label>
-                    <select name={`resource-license-{resource.id}`} id={`resource-url-{resource.id}`} bind:value={resource.licence} required>
-                        <option value='' selected disabled hidden>--Please choose an option--</option>
+                    <label class='tag' for={`resource-license-{resource.id}`}>Resource license</label>
+                    <select class='field field-select' name={`resource-license-{resource.id}`} id={`resource-url-{resource.id}`} bind:value={resource.licence} required>
+                        <option value='' selected disabled hidden>Please choose an option</option>
                         {#each licenceOptions as licence}
                             <option value={licence}>{licence}</option>
                         {/each}
@@ -185,7 +192,7 @@
                 <div>
                     <label for={`resource-author-{resource.id}`}>Are you the author of this resource?</label>
                     <select name={`resource-author-{resource.id}`} id={`resource-author-{resource.id}`} bind:value={resource.isAuthor} required>
-                        <option value='' selected disabled hidden>--Please choose an option--</option>
+                        <option value='' selected disabled hidden>Please choose an option</option>
                         <option value={true}>Yes</option>
                         <option value={false}>No</option>
                     </select>

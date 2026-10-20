@@ -72,8 +72,8 @@ declare module '$env/static/private' {
 	export const EDITOR: string;
 	export const XDG_SEAT: string;
 	export const PWD: string;
-	export const XDG_SESSION_DESKTOP: string;
 	export const LOGNAME: string;
+	export const XDG_SESSION_DESKTOP: string;
 	export const XDG_SESSION_TYPE: string;
 	export const npm_config_init_module: string;
 	export const SYSTEMD_EXEC_PID: string;
@@ -104,8 +104,8 @@ declare module '$env/static/private' {
 	export const INIT_CWD: string;
 	export const CHROME_DESKTOP: string;
 	export const STEAM_FRAME_FORCE_CLOSE: string;
-	export const __MISE_ORIG_PATH: string;
 	export const KDE_SESSION_UID: string;
+	export const __MISE_ORIG_PATH: string;
 	export const EGL_PLATFORM: string;
 	export const INFOPATH: string;
 	export const npm_lifecycle_script: string;
@@ -280,8 +280,8 @@ declare module '$env/dynamic/private' {
 		EDITOR: string;
 		XDG_SEAT: string;
 		PWD: string;
-		XDG_SESSION_DESKTOP: string;
 		LOGNAME: string;
+		XDG_SESSION_DESKTOP: string;
 		XDG_SESSION_TYPE: string;
 		npm_config_init_module: string;
 		SYSTEMD_EXEC_PID: string;
@@ -312,8 +312,8 @@ declare module '$env/dynamic/private' {
 		INIT_CWD: string;
 		CHROME_DESKTOP: string;
 		STEAM_FRAME_FORCE_CLOSE: string;
-		__MISE_ORIG_PATH: string;
 		KDE_SESSION_UID: string;
+		__MISE_ORIG_PATH: string;
 		EGL_PLATFORM: string;
 		INFOPATH: string;
 		npm_lifecycle_script: string;

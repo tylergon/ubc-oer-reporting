@@ -1,16 +1,31 @@
 # sv
 
-Notes
+## Tasks
+
+### Remaining
+
+- [ ] Aggregation page
+- [ ] Docker
+- [ ] Clean up the CSS of the input page
+- [ ] Replace site copy & footer
+
+#### Longshots
+
+- [ ] Better safety with users hitting submit multiple times
+- [ ] Stronger type safety in TypeScript (enforce domains)
+
+### Complete
+
+- [ ] Scraping of the academic calendar
+- [ ] 
+
+## Notes
+
 - Instead of a staging schema, all records are inserted with `accepted = false` and should be validated
 
-Requirements from Paul
+Tasks for Paul
 
 - [ ] Trim supported ranks found in `crawler/config`
-
-## Docker
-
-TODO: Write the Dockerfile
-TODO: What is .dockerignore?
 
 ## Data Collection
 

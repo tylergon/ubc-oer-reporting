@@ -1,34 +1,8 @@
 import { fail } from '@sveltejs/kit'
 import type { Actions } from './$types'
-import type { ResourceRecord } from '$lib/server/resources'
-import type { CourseRecord } from '$lib/server/courses'
-import { createUser } from '$lib/server/users'
-
-// TODO: Better type safety
-function parseResource(input: Record<string, unknown>): Omit<ResourceRecord, 'owner'> {
-    if (input === null || input === undefined || typeof input !== 'object')
-        throw new TypeError('Input of unexpected type received')
-    return  {
-        id: input.id as string,
-        type: input.type as string,
-        licence: input.licence as string,
-        isAuthor: input.isAuthor as boolean,
-        url: input.url as string,
-    }
-}
-
-// TODO: Better type safety
-function parseCourse(input: Record<string, unknown>): Omit<CourseRecord, 'owner'> {
-    if (input === null || input === undefined || typeof input !== 'object')
-        throw new TypeError('Input of unexpected type received')
-    return  {
-        id: input.id as string,
-        courseCode: input.courseCode as string,
-        termYear: input.termYear as string,
-        numStudents: input.numStudents as number,
-        resources: input.resources as string[],
-    }
-}
+import { addResources, isResourceInput } from '$lib/server/resources'
+import { addCourses, isCourse as isCourseInput } from '$lib/server/courses'
+import { getUser as getUser } from '$lib/server/users'
 
 export const actions: Actions = {
     default: async ({ request }) => {
@@ -45,17 +19,29 @@ export const actions: Actions = {
         const data = JSON.parse(payload)
         
         try {
+            // Create or fetch the user
             if (typeof data["name"] !== 'string' || typeof data["email"] !== 'string')
                 throw new TypeError("Unexpected input")
+            const user = await getUser(data["name"], data["email"])
+            console.log(`[${user.id}]: Processing`)
 
-            const userId = await createUser(data["name"], data["email"])
-            
-
-            // Parse resources and courses
-            const resources = data['resources']?.map(parseResource);
-            const courses = data['courses']?.map(parseCourse);
-
-            
+            // Create resources
+            const resourceInput = data['resources'];
+            if (Array.isArray(resourceInput) && resourceInput.length > 0) {
+                if (!resourceInput.every(isResourceInput))
+                    throw new Error(`Unexpected resource found in input: ${JSON.stringify(resourceInput)}`)
+                console.log(`[${user.id}]: Creating resources with IDs: ${resourceInput.map(r => r.id)}`)
+                await addResources(resourceInput.map(r => ({...r, owner: user.id})));
+            }
+                
+            // Create courses
+            const courseInput = data['courses'];
+            if (Array.isArray(courseInput) && courseInput.length > 0) {
+                if (!courseInput.every(isCourseInput))
+                    throw new Error(`Unexpected course found in input: ${JSON.stringify(courseInput)}`)
+                console.log(`[${user.id}]: Creating courses with IDs: ${courseInput.map(c => c.id)}`)
+                await addCourses(courseInput.map(c => ({...c, owner: user.id})));
+            }
         } catch (err) {
             console.error("Failed", err);
             return fail(400);
