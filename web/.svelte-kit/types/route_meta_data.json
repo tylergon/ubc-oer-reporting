@@ -3,8 +3,12 @@
 		"src/routes/+layout.ts",
 		"src/routes/+layout.ts"
 	],
-	"/input": [
-		"src/routes/input/+page.server.ts",
+	"/reporting": [
+		"src/routes/reporting/+page.server.ts",
+		"src/routes/+layout.ts"
+	],
+	"/submission": [
+		"src/routes/submission/+page.server.ts",
 		"src/routes/+layout.ts"
 	]
 }

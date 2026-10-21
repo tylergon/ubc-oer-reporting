@@ -40,8 +40,8 @@
 declare module '$env/static/private' {
 	export const DATABASE_URL: string;
 	export const ORIGIN: string;
-	export const IMSETTINGS_INTEGRATE_DESKTOP: string;
 	export const SHELL: string;
+	export const IMSETTINGS_INTEGRATE_DESKTOP: string;
 	export const npm_command: string;
 	export const SESSION_MANAGER: string;
 	export const npm_config_userconfig: string;
@@ -53,8 +53,8 @@ declare module '$env/static/private' {
 	export const HISTCONTROL: string;
 	export const XDG_MENU_PREFIX: string;
 	export const TERM_PROGRAM_VERSION: string;
-	export const HISTSIZE: string;
 	export const HOSTNAME: string;
+	export const HISTSIZE: string;
 	export const ICEAUTHORITY: string;
 	export const NODE: string;
 	export const SSH_AUTH_SOCK: string;
@@ -62,8 +62,8 @@ declare module '$env/static/private' {
 	export const PYDEVD_DISABLE_FILE_VALIDATION: string;
 	export const COLOR: string;
 	export const npm_config_local_prefix: string;
-	export const XMODIFIERS: string;
 	export const HOMEBREW_PREFIX: string;
+	export const XMODIFIERS: string;
 	export const DESKTOP_SESSION: string;
 	export const GTK_RC_FILES: string;
 	export const NO_AT_BRIDGE: string;
@@ -92,8 +92,8 @@ declare module '$env/static/private' {
 	export const XDG_CURRENT_DESKTOP: string;
 	export const npm_package_version: string;
 	export const VIRTUAL_ENV: string;
-	export const MEMORY_PRESSURE_WATCH: string;
 	export const PYTHONSTARTUP: string;
+	export const MEMORY_PRESSURE_WATCH: string;
 	export const WAYLAND_DISPLAY: string;
 	export const __MISE_DIFF: string;
 	export const GIT_ASKPASS: string;
@@ -104,8 +104,8 @@ declare module '$env/static/private' {
 	export const INIT_CWD: string;
 	export const CHROME_DESKTOP: string;
 	export const STEAM_FRAME_FORCE_CLOSE: string;
-	export const KDE_SESSION_UID: string;
 	export const __MISE_ORIG_PATH: string;
+	export const KDE_SESSION_UID: string;
 	export const EGL_PLATFORM: string;
 	export const INFOPATH: string;
 	export const npm_lifecycle_script: string;
@@ -248,8 +248,8 @@ declare module '$env/dynamic/private' {
 	export const env: {
 		DATABASE_URL: string;
 		ORIGIN: string;
-		IMSETTINGS_INTEGRATE_DESKTOP: string;
 		SHELL: string;
+		IMSETTINGS_INTEGRATE_DESKTOP: string;
 		npm_command: string;
 		SESSION_MANAGER: string;
 		npm_config_userconfig: string;
@@ -261,8 +261,8 @@ declare module '$env/dynamic/private' {
 		HISTCONTROL: string;
 		XDG_MENU_PREFIX: string;
 		TERM_PROGRAM_VERSION: string;
-		HISTSIZE: string;
 		HOSTNAME: string;
+		HISTSIZE: string;
 		ICEAUTHORITY: string;
 		NODE: string;
 		SSH_AUTH_SOCK: string;
@@ -270,8 +270,8 @@ declare module '$env/dynamic/private' {
 		PYDEVD_DISABLE_FILE_VALIDATION: string;
 		COLOR: string;
 		npm_config_local_prefix: string;
-		XMODIFIERS: string;
 		HOMEBREW_PREFIX: string;
+		XMODIFIERS: string;
 		DESKTOP_SESSION: string;
 		GTK_RC_FILES: string;
 		NO_AT_BRIDGE: string;
@@ -300,8 +300,8 @@ declare module '$env/dynamic/private' {
 		XDG_CURRENT_DESKTOP: string;
 		npm_package_version: string;
 		VIRTUAL_ENV: string;
-		MEMORY_PRESSURE_WATCH: string;
 		PYTHONSTARTUP: string;
+		MEMORY_PRESSURE_WATCH: string;
 		WAYLAND_DISPLAY: string;
 		__MISE_DIFF: string;
 		GIT_ASKPASS: string;
@@ -312,8 +312,8 @@ declare module '$env/dynamic/private' {
 		INIT_CWD: string;
 		CHROME_DESKTOP: string;
 		STEAM_FRAME_FORCE_CLOSE: string;
-		KDE_SESSION_UID: string;
 		__MISE_ORIG_PATH: string;
+		KDE_SESSION_UID: string;
 		EGL_PLATFORM: string;
 		INFOPATH: string;
 		npm_lifecycle_script: string;

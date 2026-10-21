@@ -2,7 +2,7 @@
     import { onMount } from "svelte";
     import StaffSearch from "$lib/components/StaffSearch.svelte";
     import type { FacultyData, Position, Staff, UnitData } from "$lib/types";
-    import { licenceOptions, resourceOptions } from "./options";
+    import { licenceOptions, resourceOptions, termYearOptions } from "./options";
     import type { CourseInput, FormInput, ResourceInput } from "./types";
     import { X } from 'lucide-svelte';
     import { enhance } from "$app/forms";
@@ -143,12 +143,6 @@
 
         {#each input.resources as resource, i (resource.id)}
 
-
-            <X
-                class="text-gray-500 hover:text-gray-800"
-                onclick={() => removeResource(resource)}
-            />
-
             <div class='flex flex-col gap-2'>
                 <div>
                     <label class='tag' for={`resource-type-{i}`}>Type</label>
@@ -190,94 +184,91 @@
                 </div>
 
                 <div>
-                    <label for={`resource-author-{resource.id}`}>Are you the author of this resource?</label>
-                    <select name={`resource-author-{resource.id}`} id={`resource-author-{resource.id}`} bind:value={resource.isAuthor} required>
+                    <label class='tag' for={`resource-author-{resource.id}`}>Are you the author of this resource?</label>
+                    <select class='field field-select' name={`resource-author-{resource.id}`} id={`resource-author-{resource.id}`} bind:value={resource.isAuthor} required>
                         <option value='' selected disabled hidden>Please choose an option</option>
                         <option value={true}>Yes</option>
                         <option value={false}>No</option>
                     </select>
                 </div>
 
+
+                <button class="btn btn-sm" type='button' onclick={() => removeResource(resource)}>
+                    Remove resource
+                </button>
+
             </div>
         {/each}
             
-        <button type='button' onclick={() => addResource()}>
+        <button class="btn btn-sm" type='button' onclick={() => addResource()}>
             Add resource
         </button>
 
         <h2>Course</h2>
 
         {#each input.courses as course, i (course.id)}
-
-            <X
-                class="text-gray-500 hover:text-gray-800"
-                onclick={() => removeCourse(course)}
-            />
-
-            <div class="field">
-                <div>
-                    <label for={`course-code-{index}`}>Course Code</label>
-                    <input
-                        type='text'
-                        name={`course-code-{i}`}
-                        id={`course-code-{i}`}
-                        placeholder='Enter course code'
-                        bind:value={course.courseCode}
-                        required
-                    />
-                </div>
-
-                <!-- TODO: Fix this w/ a select -->
-                <div> 
-                    <label for={`term-year-{index}`}>Academic Period</label>
-                    <input
-                        type='text'
-                        name={`term-year-{i}`}
-                        id={`term-year-{i}`}
-                        placeholder='Enter academic period'
-                        bind:value={course.termYear}
-                        required
-                    />
-                </div>
-
-                <div>
-                    <label for={`num-students-{index}`} class="tag">
-                        Number of students
-                    </label>
-                    <input
-                        type='number'
-                        min=0
-                        step=1
-                        name={`num-students-{i}`}
-                        id={`num-students-{i}`}
-                        placeholder='Enter number of students'
-                        bind:value={course.numStudents}
-                        required
-                    />
-                </div>
-
-                <div>
-                    <label for={`num-students-{index}`} class="tag">
-                        Number of students
-                    </label>
-                    <select multiple bind:value={course.resources}>
-                        {#each input.resources as resource}
-                            <option value={resource.id}>{resource.url}</option>
-                        {/each}
-                    </select>
-                </div>
+            <div>
+                <label for={`course-code-{index}`} class='tag'>Course Code</label>
+                <input
+                    class='field'
+                    type='text'
+                    name={`course-code-{i}`}
+                    id={`course-code-{i}`}
+                    placeholder='Enter course code'
+                    bind:value={course.courseCode}
+                    required
+                />
             </div>
+
+            <!-- TODO: Fix this w/ a select -->
+            <div> 
+                <label for={`term-year-{index}`} class='tag'>Academic Period</label>
+
+                <select class='field field-select' name={`term-year-{i}`} id={`term-year-{i}`} bind:value={course.termYear} required>
+                    <option value='' selected disabled hidden>Please choose an option</option>
+                    {#each termYearOptions as period}
+                        <option value={period}>{period}</option>
+                    {/each}
+                </select>
+            </div>
+
+            <div>
+                <label for={`num-students-{index}`} class="tag">
+                    Number of students
+                </label>
+                <input
+                    type='number'
+                    min=0
+                    step=1
+                    name={`num-students-{i}`}
+                    id={`num-students-{i}`}
+                    placeholder='Enter number of students'
+                    bind:value={course.numStudents}
+                    required
+                />
+            </div>
+
+            <div>
+                <label for={`num-students-{index}`} class="tag">
+                    Resources
+                </label>
+                <select multiple bind:value={course.resources}>
+                    {#each input.resources as resource}
+                        <option value={resource.id}>{resource.url}</option>
+                    {/each}
+                </select>
+            </div>
+
+            <button class="btn btn-sm" type='button' onclick={() => removeCourse(course)}>
+                Remove resource
+            </button>
         {/each}
 
-        <button type='button' onclick={addCourse}>
+        <button class="btn btn-sm" type='button' onclick={addCourse}>
             Add course
         </button>
-
-        <button type='button' onclick={() => console.log(input)}>
-            Dump to console
-        </button>
         
-        <button type='submit'>
+        <button class="btn btn-sm" type='submit'>
             Submit
         </button>
     </form>
@@ -285,10 +276,6 @@
 
 <style>
     @import "tailwindcss";
-
-    button {
-        @apply border rounded-sm border-slate-400 px-1 self-start hover:bg-slate-100 transition-colors duration-200;
-    }
 
     .container {
         @apply flex flex-col gap-2;

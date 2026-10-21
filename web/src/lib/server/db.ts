@@ -37,7 +37,8 @@ export async function initDb() {
         id              uuid primary key,
         owner_id        uuid not null references users(id) on delete cascade,
         course_code     text not null,
-        term_year       text not null,
+        term            text not null,
+        year            integer not null,
         num_students    integer check (num_students >= 0),
         accepted        boolean not null default FALSE,
         created_at      timestamptz not null default now()

@@ -6,8 +6,12 @@
             route: "/",
         },
         {
-            label: "Input",
-            route: "/input",
+            label: "Submission Form",
+            route: "/submission",
+        },
+        {
+            label: "Reporting",
+            route: "/reporting",
         }
     ]
 </script>

@@ -1,31 +1,14 @@
-<script lang="ts">
-    import { page } from '$app/stores';
-    const items = [
-        {
-            label: "Home",
-            route: "/",
-        },
-        {
-            label: "Reporting",
-            route: "/reporting",
-        }
-    ]
-</script>
-
-<div class="border-t border-slate-200 bg-slate-50 px-6 py-6">
+<footer class="bg-bg border-t border-border px-1 py-1">
   <div class="mx-auto flex max-w-4xl flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
     <img
-      src="/images/ACET_logo.png"
-      alt="ACET Attribution"
-      width="100"
+      src="/images/ubc_logo.png"
+      alt="UBC Logo"
+      width="60"
       class="shrink-0 opacity-90"
     />
 
     <div class="space-y-2 text-sm leading-relaxed text-slate-600">
-
-      <p>
-        This research was undertaken thanks in part to funding from the Canada First Research Excellence Fund, as part of the University of Victoria-led Accelerating Community Energy Transformation (ACET) Initiative.
-      </p>
+      <p>Some sort of copy for the attribution...</p>
 
       <p class="text-xs text-slate-500">
         CC BY 4.0 — This work is licensed under a
@@ -38,10 +21,4 @@
       </p>
     </div>
   </div>
-</div>
-
-<style>
-    @import "tailwindcss";
-    
-    
-</style>
+</footer>

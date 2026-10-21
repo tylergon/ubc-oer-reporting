@@ -1,6 +1,15 @@
 import { sql } from "./db";
 import type { ResourceData } from "./resources";
 
+type CourseInput = {
+    id: string;
+    owner: string;
+    courseCode: string;
+    termYear: string;
+    numStudents: number;
+    resources: string[];
+}
+
 /**
  * Database type of a course
  */
@@ -8,7 +17,8 @@ type CourseData = {
     id: string;
     owner_id: string;
     course_code: string;
-    term_year: string;
+    term: string;
+    year: number;
     num_students: number;
     accepted: string;
 }
@@ -20,7 +30,8 @@ export type Course = {
     id: string;
     owner: string;
     courseCode: string;
-    termYear: string;
+    term: string;
+    year: number
     numStudents: number;
     resources: string[];
 }
@@ -29,7 +40,7 @@ export type Course = {
  * Type check for course
  * @returns 
  */
-export function isCourse(input: unknown): input is Omit<Course, 'owner'> {
+export function isCourse(input: unknown): input is Omit<CourseInput, 'owner'> {
     if (typeof input !== 'object' || input === null) return false;
     
     const obj = input as Record<string, unknown>;
@@ -53,7 +64,7 @@ export function isCourse(input: unknown): input is Omit<Course, 'owner'> {
  * @param course The course to be created
  * @returns 
  */
-export const addCourse = async (course: Course): Promise<Course> => {
+export const addCourse = async (course: CourseInput): Promise<Course> => {
     const resourceIds = [...new Set(course.resources ?? [])]
     console.log(JSON.stringify(course))
 
@@ -70,24 +81,20 @@ export const addCourse = async (course: Course): Promise<Course> => {
             throw new Error(`Unable to create course due to unexisting resource in ${resourceIds}`)
     }
 
-    console.log('Adding course 2')
+    const year = Number(course['termYear'].slice(0,4))
+    const term = course['termYear'].slice(4,6)
 
     // Create the course
     const [courseData] = await sql<CourseData[]>`
-        insert into courses (id, owner_id, course_code, term_year, num_students)
+        insert into courses (id, owner_id, course_code, term, year, num_students)
         values (${course.id},
                 ${course.owner},
                 ${course.courseCode},
-                ${course.termYear},
+                ${term},
+                ${year},
                 ${course.numStudents})
         returning *
     `;
-
-
-
-    console.log('Adding course 3')
-
-    console.log(resourceIds)
 
     // Link the course to it's resources
     if (resourceIds.length === 0) {
@@ -109,7 +116,7 @@ export const addCourse = async (course: Course): Promise<Course> => {
  * Concurrently creates new courses
  * @returns 
  */
-export const addCourses = async (courses: Course[]): Promise<Course[]> => {
+export const addCourses = async (courses: CourseInput[]): Promise<Course[]> => {
     if (courses.length === 0) return []
     return Promise.all(courses.map(addCourse));
 }
@@ -123,7 +130,8 @@ function fromCourseData(record: CourseData, resourceIds?: string[]): Course {
         id: record['id'],
         owner: record['owner_id'],
         courseCode: record['course_code'],
-        termYear: record['term_year'],
+        term: record['term'],
+        year: record['year'],
         numStudents: record['num_students'],
         resources: resourceIds ?? [],
     }

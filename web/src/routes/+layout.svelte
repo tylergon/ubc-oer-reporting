@@ -11,10 +11,12 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<TopNav />
+<div class="flex min-h-dvh flex-col">
+  <TopNav />
 
-<div class="max-w-5xl mx-auto py-6 flex flex-col gap-2">
-	{@render children()}
+  <main class="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-2 py-6">
+    {@render children()}
+  </main>
+
+  <Footer />
 </div>
-
-<Footer />
