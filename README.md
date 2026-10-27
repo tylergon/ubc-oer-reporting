@@ -97,25 +97,26 @@ SvelteKit 2 (Svelte 5 and TypeScript) app styled using Tailwind v4. There is no 
 
 !WIP
 
-### Complete
+### Hand-off tasks
 
-- [ ] Scraping of the academic calendar
+- [ ] Make everything work again
+- [ ] Docker build and compose
+- [ ] Wrap up CSS on the input page (?)
+- [ ] Write the README
+- [ ] Clear form on submit
 
-### Remaining
+### Remaining Work
 
-- [ ] Aggregation page
-- [ ] Docker
-- [ ] Clean up the CSS of the input page
-- [ ] Replace site copy & footer
-- [ ] Better safety with users hitting submit multiple times
-- [ ] Staging vs. accepted
+- [ ] Additional reporting components for departments and faculties
+- [ ] Create an interface for admins to triage and accept submissions
+- [ ] Pare down supported titles found in `crawler/config`
+- [ ] Update site copy to match project goals and messaging
+
+### Known Bugs
+
+- [ ] Some schools exist at the department and faculty level (SPPGA)
 
 ### Nice-to-haves and longshots
 
 - [ ] Stronger type safety in TypeScript (enforce domains)
 - [ ] Build a web-scraper for courses
-
-### Hand-off
-
-- [ ] Clean up supported titles
-- [ ] Clean up site copy
