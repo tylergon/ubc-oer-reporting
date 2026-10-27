@@ -30,7 +30,13 @@ A further breakdown of commands can be found in the `mise.toml`.
 - **`mise run crawler:crawl`** runs just the crawling portion of the web scraper
 - **`mise run crawler:filter`** runs just the filtering portion of the web scraper
 
-## Architecture
+## Deployment
+
+`wip`
+
+## Development
+
+### Architecture
 
 The repository is divided into related projects:
 
@@ -51,7 +57,7 @@ The repository is divided into related projects:
 
 ### Web
 
-!WIP
+`wip`
 
 SvelteKit 2 (Svelte 5 and TypeScript) app styled using Tailwind v4. There is no login/user control, anyone who can access it can upload data.
 
