@@ -52,6 +52,10 @@ run = "npx prettier --check ."
 
 # ---------- Crawler ----------
 
+[tasks."crawler:all"]
+description = "Runs the full crawling pipeline"
+depends = ["crawler:crawl", "crawler:filter"]
+
 [tasks."crawler:crawl"]
 description = "Scrape the academic calendar"
 dir = "crawler"
@@ -61,7 +65,3 @@ run = "uv run scrapy crawl academic-calendar"
 description = "Clean scraped names and filter unneeded data"
 dir = "crawler"
 run = "uv run filter_outputs.py"
-
-[tasks."crawler:all"]
-description = "Runs the full crawling pipeline"
-depends = ["crawler:crawl", "crawler:filter"]
