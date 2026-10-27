@@ -12,47 +12,23 @@ mise install        # High level configuration
 mise run install    # Installs dependencies for sub-projects
 ```
 
-Refer to the `mise.toml` file to see tool versioning. `mise doctor` can be used to diagnose problems.
+Refer to the `mise.toml` file to see tool versioning. Use `mise doctor` to diagnose problems.
 
-## Commands
+### Manual Configuration
 
-Breakdown of commands supported in the `mise.toml`.
-
-### Setup
-
-| Command | Description |
-|---------|-------------|
-| `mise run install` | Installs dependencies project-wide |
-| `mise run web:install` | Installs dependencies for the web sub-project |
-| `mise run crawler:install` | Installs dependencies for the web scraper sub-project |
-
-The `install` command runs installation scripts for both sub-projects
-
-### Website
-
-| Command | Description |
-|---------|-------------|
-| `mise run web:dev` | Start the dev server |
-| `mise run web:build` | Build the production app (outputs to `web/build/`) |
-| `mise run web:check` | Type checks Svelte and TypeScript |
-| `mise run web:format` | Formats the website's code |
-| `mise run web:lint` | Checks the website's code formatting with fixing |
-
-Prior to running the project:
-
-1. Secrets should be configured in `web/.env`.
-2. A copy of `crawler/output` should be moved to `web/static/data`.
+- Secrets (e.g. connection string) should be configured in `web/.env`.
+- A copy of `crawler/output` should be moved to `web/static/data`.
     - *This is managed by Docker for production*.
 
-### Crawler
+### Basic Commands
 
-| Command | Description |
-|---------|-------------|
-| `mise run crawler:all` | Runs the entire scraping pipeline |
-| `mise run crawler:crawl` | Scrapes the academic calendar |
-| `mise run crawler:filter` | Cleans scraped names and filters collected data |
+A further breakdown of commands can be found in the `mise.toml`.
 
-Raw scraping results are output to the `crawler/scratch` directory, while cleaned + filtered results are output to `crawler/output`. 
+- **`mise run install`** installs all dependencies (includes sub-projects)
+- **`mise run web:dev`** starts the dev server
+- **`mise run crawler:all`** runs the entire crawling pipeline
+- **`mise run crawler:crawl`** runs just the crawling portion of the web scraper
+- **`mise run crawler:filter`** runs just the filtering portion of the web scraper
 
 ## Architecture
 
@@ -62,7 +38,7 @@ The repository is divided into related projects:
 - **`web/`** is a SvelteKit site allowing users to submit OER usage to create individual, departmental, and faculty level reporting
 
 ```
-├── mise.toml           # toolchain + task runner
+├── mise.toml           # project config + task runner
 ├── web/
 │   ├── src/routes/     # pages and endpoints
 │   ├── src/lib/server/ # database access and schema
