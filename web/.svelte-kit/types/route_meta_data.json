@@ -1,14 +1,11 @@
 {
-	"/": [
-		"src/routes/+layout.ts",
-		"src/routes/+layout.ts"
-	],
-	"/reporting": [
-		"src/routes/reporting/+page.server.ts",
-		"src/routes/+layout.ts"
-	],
-	"/submission": [
-		"src/routes/submission/+page.server.ts",
-		"src/routes/+layout.ts"
-	]
+  "/": ["src/routes/+layout.ts", "src/routes/+layout.ts"],
+  "/reporting": [
+    "src/routes/reporting/+page.server.ts",
+    "src/routes/+layout.ts"
+  ],
+  "/submission": [
+    "src/routes/submission/+page.server.ts",
+    "src/routes/+layout.ts"
+  ]
 }
