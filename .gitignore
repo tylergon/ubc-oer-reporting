@@ -1,28 +1,40 @@
-node_modules
+# ---------- OS / editors ----------
 
-# Output
-.output
-.vercel
-.netlify
-.wrangler
-/.svelte-kit
-/build
-
-# OS
 .DS_Store
 Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
 
-# Env
+# ---------- Secrets / environment ----------
+
 .env
 .env.*
 !.env.example
 !.env.test
 
-# Vite
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
+# ---------- mise ----------
 
-__pycache__
+mise.local.toml
+.mise.local.toml
 
-web/src/lib/data
+
+# ---------- Web (SvelteKit) ----------
+
+web/node_modules/
+web/.svelte-kit/
+web/build/
+web/.output/
+web/.vercel/
+web/.netlify/
+web/vite.config.js.timestamp-*
+web/vite.config.ts.timestamp-*
+web/npm-debug.log*
 web/static/data
+
+# ---------- Crawler (Python, Scrapy, uv) ----------
+
+crawler/.venv/
+__pycache__/
