@@ -37,4 +37,5 @@ web/static/data
 # ---------- Crawler (Python, Scrapy, uv) ----------
 
 crawler/.venv/
+crawler/scratch/
 __pycache__/

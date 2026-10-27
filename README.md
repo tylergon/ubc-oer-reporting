@@ -30,10 +30,6 @@ A further breakdown of commands can be found in the `mise.toml`.
 - **`mise run crawler:crawl`** runs just the crawling portion of the web scraper
 - **`mise run crawler:filter`** runs just the filtering portion of the web scraper
 
-## Deployment
-
-`wip`
-
 ## Development
 
 ### Architecture
@@ -92,6 +88,10 @@ SvelteKit 2 (Svelte 5 and TypeScript) app styled using Tailwind v4. There is no 
 
 - Supported professors?
 - What is being filtered
+
+## Deployment
+
+`wip`
 
 ## Project Status
 
