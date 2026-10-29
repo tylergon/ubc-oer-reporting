@@ -91,7 +91,20 @@ SvelteKit 2 (Svelte 5 and TypeScript) app styled using Tailwind v4. There is no 
 
 ## Deployment
 
-`wip`
+The application is containerized and deployed using `podman` (or `docker`). 
+
+> [!IMPORTANT]
+> As prerequisites, the deployment pipeline expects:
+> 1. The web crawler to have already run and for results to exist in `crawler/output`
+> 2. A valid .env file to be located at `web/.env`
+
+### Deploy
+
+```sh
+podman compose up -d --build    # or: docker compose
+```
+
+Once deployed, the app is served on port 3000. Verify successful deployment by navigating to `http://localhost:3000` or via `curl` request.
 
 ## Project Status
 

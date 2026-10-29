@@ -276,11 +276,3 @@
 		<button class="btn btn-sm" type="submit"> Submit </button>
 	</form>
 {/if}
-
-<style>
-	@import 'tailwindcss';
-
-	.container {
-		@apply flex flex-col gap-2;
-	}
-</style>

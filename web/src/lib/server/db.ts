@@ -1,7 +1,8 @@
 import { env } from '$env/dynamic/private';
+import { building } from '$app/environment';
 import postgres from 'postgres';
 
-if (!env.DATABASE_URL) {
+if (!building && !env.DATABASE_URL) {
 	throw new Error('DATABASE_URL is not configured');
 }
 
