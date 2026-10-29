@@ -114,11 +114,11 @@ Once deployed, the app is served on port 3000. Verify successful deployment by n
 
 - [x] Make everything work again
 - [x] Docker build and compose
-- [ ] Wrap up CSS on the input page (?)
-- [ ] Write the README
+- [x] Wrap up CSS on the input page (?)
+- [x] Write the README
 - [ ] Clear form on submit
 
-### Remaining Work
+### Additional Work
 
 - [ ] Additional reporting components for departments and faculties
 - [ ] Create an interface for admins to triage and accept submissions
