@@ -106,7 +106,7 @@
 </script>
 
 <div class="relative w-full max-w-xs">
-	<label for="select-professor" class="tag"> Search Professor </label>
+	<label for="select-professor" class="field-label"> Search Professor </label>
 
 	<input
 		id="select-professor"

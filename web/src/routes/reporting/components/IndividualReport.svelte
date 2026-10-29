@@ -33,7 +33,7 @@
 
 <div class="flex flex-col gap-2">
 	<div>
-		<label for="reporting-type" class="tag">Email</label>
+		<label for="reporting-type" class="field-label">Email</label>
 		<select
 			class="field field-select"
 			name="reporting-type"
@@ -105,7 +105,7 @@
 	{/if}
 
 	{#if reports && reports['resourceDiversityReport']}
-		<h3>Students taught</h3>
+		<h3>Resources Used</h3>
 
 		{#if reports.resourceDiversityReport.length === 0}
 			<p>No results found...</p>

@@ -8,9 +8,8 @@
 
 	/* colours */
 	--color-text: #6b6375;
-	--color-heading: #08060d;
 	--color-bg: #fff;
-	--color-border: #e5e4e7;
+	--color-border: #a090c2;
 	--color-code-bg: #f4f3ec;
 	--color-accent: #aa3bff;
 }
@@ -28,9 +27,6 @@
 }
 
 @layer base {
-	html {
-		font-size: 16px;
-	}
 
 	body {
 		font-family: var(--font-sans);
@@ -57,16 +53,35 @@
 	}
 }
 
+/* 
+
+outline-blue-500
+border-gray-300
+
+text-gray-500
+bg-gray-100
+
+
+*/
+
+@utility focus-ring {
+	@apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500;
+}
+
+/* FORM FIELDS */
+
+@utility field-label {
+	@apply mb-1 block text-sm;
+}
+
 @utility field {
-	@apply w-full rounded-md border border-gray-300 bg-white px-3 py-2 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-blue-500;
+	@apply focus-ring w-full rounded-md border border-gray-300 bg-bg px-3 py-2
+		placeholder:text-gray-400  aria-invalid:border-red-500
+		aria-invalid:focus-visible:outline-red-500;
 }
 
 @utility field-disabled {
 	@apply cursor-not-allowed bg-gray-100 text-gray-500 opacity-70;
-}
-
-@utility tag {
-	@apply mb-1 block text-sm;
 }
 
 @utility field-select {
@@ -76,67 +91,43 @@
 	background-position: right 0.75rem center;
 	background-size: 1.25rem;
 
-	/* placeholder state: required select with an empty-value option */
 	&:invalid {
-		@apply text-gray-400;
+		@apply text-gray-500;
 	}
 	& option {
 		@apply text-gray-900;
 	}
-	&:disabled {
-		@apply cursor-not-allowed bg-gray-100 text-gray-500 opacity-70;
-	}
 }
 
 @utility field-multiselect {
-	@apply min-h-32 cursor-pointer p-1;
+	@apply cursor-pointer p-1 min-h-32;
 
 	& option {
 		@apply rounded px-2 py-1.5 text-sm;
 	}
+
 	& option:checked {
-		@apply bg-blue-100 text-blue-900;
+		/* @apply text-blue-900; */
+		color: var(--color-blue-900) !important;
 		background: var(--color-blue-100)
-			linear-gradient(0deg, var(--color-blue-100), var(--color-blue-100));
+			linear-gradient(0deg, var(--color-blue-200), var(--color-blue-200));
 	}
 }
 
-/* Wrap the X icon in a <button> so it's keyboard accessible */
-@utility icon-button {
-	@apply inline-flex size-8 shrink-0 items-center justify-center rounded-md text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-800 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-blue-500 disabled:cursor-not-allowed disabled:opacity-50;
-}
-
-@utility icon-button-danger {
-	@apply hover:bg-red-50 hover:text-red-700;
-}
-
 /* BUTTONS */
-
 @utility btn {
-	@apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-md px-6 py-1.5 text-xs font-medium transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 disabled:cursor-not-allowed disabled:opacity-50;
-}
-
-@utility btn-primary {
-	@apply bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 disabled:hover:bg-blue-600;
-}
-
-@utility btn-secondary {
-	@apply border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 active:bg-gray-100;
+	@apply focus-ring inline-flex w-fit cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-gray-300 bg-transparent px-2 py-1
+		text-sm font-medium text-gray-500 transition select-none
+		hover:border-blue-200 hover:bg-blue-100 hover:text-blue-700 active:bg-blue-200
+		disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent;
 }
 
 @utility btn-danger {
-	@apply bg-red-600 text-white hover:bg-red-700 active:bg-red-800;
+	@apply  ml-auto hover:border-red-200 hover:bg-red-100 hover:text-red-700 active:bg-red-200;
 }
 
-@utility btn-ghost {
-	@apply text-gray-600 hover:bg-gray-100 hover:text-gray-900;
-}
 
-/* @utility btn-sm {
-	
-} */
-
-/* STAT LAYOUT (for reporting) */
+/* REPORTING */
 
 @layer components {
 	.stats {

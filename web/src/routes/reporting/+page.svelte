@@ -15,7 +15,7 @@
 <p>Here's all the reporting stuff!</p>
 
 <div>
-	<label for="reporting-type" class="tag">Report Type</label>
+	<label for="reporting-type" class="field-label">Report Type</label>
 	<select class="field field-select" name="reporting-type" id="reporting-type" bind:value={type}>
 		<option value="individual">Individual</option>
 		<option value="faculty">Faculty</option>

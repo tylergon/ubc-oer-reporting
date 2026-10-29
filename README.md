@@ -112,8 +112,8 @@ Once deployed, the app is served on port 3000. Verify successful deployment by n
 
 ### Hand-off tasks
 
-- [ ] Make everything work again
-- [ ] Docker build and compose
+- [x] Make everything work again
+- [x] Docker build and compose
 - [ ] Wrap up CSS on the input page (?)
 - [ ] Write the README
 - [ ] Clear form on submit

@@ -82,7 +82,7 @@
 			<h2>Basic Information</h2>
 
 			<div>
-				<label for="name" class="tag">Name</label>
+				<label for="name" class="field-label">Name</label>
 				<input
 					type="text"
 					class="field field-disabled"
@@ -95,7 +95,7 @@
 			</div>
 
 			<div>
-				<label for="email" class="tag">Email</label>
+				<label for="email" class="field-label">Email</label>
 				<input
 					type="email"
 					class="field"
@@ -108,7 +108,7 @@
 			</div>
 
 			<ul class="space-y-2">
-				<label for="positions" class="tag">
+				<label for="positions" class="field-label">
 					Position{staff.positions.length > 1 ? 's' : ''}
 				</label>
 
@@ -140,7 +140,7 @@
 		{#each input.resources as resource, i (resource.id)}
 			<div class="flex flex-col gap-2">
 				<div>
-					<label class="tag" for={`resource-type-{i}`}>Type</label>
+					<label class="field-label" for={`resource-type-{i}`}>Type</label>
 					<select
 						class="field field-select"
 						name="resource-type"
@@ -156,7 +156,7 @@
 				</div>
 
 				<div>
-					<label class="tag" for={`resource-url-{i}`}>URL</label>
+					<label class="field-label" for={`resource-url-{i}`}>URL</label>
 					<input
 						class="field"
 						type="url"
@@ -169,7 +169,7 @@
 				</div>
 
 				<div>
-					<label class="tag" for={`resource-license-{resource.id}`}>Resource license</label>
+					<label class="field-label" for={`resource-license-{resource.id}`}>Resource license</label>
 					<select
 						class="field field-select"
 						name={`resource-license-{resource.id}`}
@@ -185,7 +185,7 @@
 				</div>
 
 				<div>
-					<label class="tag" for={`resource-author-{resource.id}`}
+					<label class="field-label" for={`resource-author-{resource.id}`}
 						>Are you the author of this resource?</label
 					>
 					<select
@@ -201,19 +201,19 @@
 					</select>
 				</div>
 
-				<button class="btn btn-sm" type="button" onclick={() => removeResource(resource)}>
+				<button class="btn btn-danger" type="button" onclick={() => removeResource(resource)}>
 					Remove resource
 				</button>
 			</div>
 		{/each}
 
-		<button class="btn btn-sm" type="button" onclick={() => addResource()}> Add resource </button>
+		<button class="btn" type="button" onclick={() => addResource()}> Add resource </button>
 
 		<h2>Course</h2>
 
 		{#each input.courses as course, i (course.id)}
 			<div>
-				<label for={`course-code-{index}`} class="tag">Course Code</label>
+				<label for={`course-code-{index}`} class="field-label">Course Code</label>
 				<input
 					class="field"
 					type="text"
@@ -227,7 +227,7 @@
 
 			<!-- TODO: Fix this w/ a select -->
 			<div>
-				<label for={`term-year-{index}`} class="tag">Academic Period</label>
+				<label for={`term-year-{index}`} class="field-label">Academic Period</label>
 
 				<select
 					class="field field-select"
@@ -244,8 +244,9 @@
 			</div>
 
 			<div>
-				<label for={`num-students-{index}`} class="tag"> Number of students </label>
+				<label for={`num-students-{index}`} class="field-label"> Number of students </label>
 				<input
+					class="field"
 					type="number"
 					min="0"
 					step="1"
@@ -258,21 +259,25 @@
 			</div>
 
 			<div>
-				<label for={`num-students-{index}`} class="tag"> Resources </label>
-				<select multiple bind:value={course.resources}>
+				<label for={`num-students-{index}`} class="field-label">Resources</label>
+				<select 
+					class="field field-multiselect"
+					multiple 
+					bind:value={course.resources}
+				>
 					{#each input.resources as resource}
 						<option value={resource.id}>{resource.url}</option>
 					{/each}
 				</select>
 			</div>
 
-			<button class="btn btn-sm" type="button" onclick={() => removeCourse(course)}>
-				Remove resource
+			<button class="btn btn-danger" type="button" onclick={() => removeCourse(course)}>
+				Remove course
 			</button>
 		{/each}
 
-		<button class="btn btn-sm" type="button" onclick={addCourse}> Add course </button>
+		<button class="btn" type="button" onclick={addCourse}> Add course </button>
 
-		<button class="btn btn-sm" type="submit"> Submit </button>
+		<button class="btn" type="submit"> Submit </button>
 	</form>
 {/if}
