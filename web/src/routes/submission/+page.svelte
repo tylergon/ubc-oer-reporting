@@ -1,16 +1,19 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import StaffSearch from '$lib/components/StaffSearch.svelte';
-	import type { FacultyData, Position, Staff, UnitData } from '$lib/types';
+	import type { FacultyData, Staff, UnitData } from '$lib/types';
 	import { licenceOptions, resourceOptions, termYearOptions } from './options';
 	import type { CourseInput, FormInput, ResourceInput } from './types';
-	import { X } from 'lucide-svelte';
+	import { LoaderCircle, X } from 'lucide-svelte';
 	import { enhance } from '$app/forms';
+	import type { ActionData } from './$types';
 
-	let { form } = $props();
+		let { form }: { form: ActionData } = $props();
+		$inspect(form)
 
 	let input: FormInput = $state({ resources: [], courses: [] });
 	let staff: Staff | undefined = $state();
+	let loading: boolean = $state(false);
 	let faculties: FacultyData[] = $state([]);
 	let units: UnitData[] = $state([]);
 
@@ -60,21 +63,16 @@
 	<form
 		method="POST"
 		class="flex flex-col gap-2"
-		use:enhance={({ formData, cancel }) => {
-			// Do validation here...
+		use:enhance={({ formData }) => {
 			if (!staff) return;
 
 			// Create the resulting object
-			formData.set(
-				'payload',
-				JSON.stringify({
-					...staff,
-					...input
-				})
-			);
+			formData.set('payload', JSON.stringify({ ...staff, ...input }));
+			loading = true;
 
 			return async ({ update }) => {
-				await update({ reset: false });
+				await update({ reset: true });
+				loading = false;
 			};
 		}}
 	>
@@ -278,6 +276,17 @@
 
 		<button class="btn" type="button" onclick={addCourse}> Add course </button>
 
-		<button class="btn" type="submit"> Submit </button>
-	</form>
+		<button class="btn" type="submit">
+			{#if loading}
+				<LoaderCircle class="animate-spin h-[1em] text-blue-500" />
+				Submitting
+			{:else}
+				Submit
+			{/if}
+		</button>
+
+		{#if form?.error}
+			An unknown error was encountered. 
+			If this issue persists, please contact a site administrator
+		{/if}</form>
 {/if}

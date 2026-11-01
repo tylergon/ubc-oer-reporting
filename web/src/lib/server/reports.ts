@@ -13,7 +13,7 @@ export async function studentsTaughtReport(user: User): Promise<{ year: number; 
 	return [...results];
 }
 
-export async function totalCoursesTaught(user: User): Promise<number> {
+export async function totalCoursesTaughtReport(user: User): Promise<number> {
 	const [row] = await sql<{ total: number }[]>`
         select count(*)::int as total
         from courses
@@ -22,7 +22,7 @@ export async function totalCoursesTaught(user: User): Promise<number> {
 	return row.total;
 }
 
-export async function resourceCount(user: User): Promise<number> {
+export async function resourceCountReport(user: User): Promise<number> {
 	const [row] = await sql<{ total: number }[]>`
         select count(*)::int as total
         from resources
@@ -31,7 +31,7 @@ export async function resourceCount(user: User): Promise<number> {
 	return row.total;
 }
 
-export async function resourceTypeCount(user: User): Promise<number> {
+export async function resourceTypeCountReport(user: User): Promise<number> {
 	const [row] = await sql<{ total: number }[]>`
         select count(distinct type)::int as total
         from resources

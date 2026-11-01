@@ -9,12 +9,12 @@
 		emails?: string[];
 		reports: null | {
 			general?: {
-				coursesTaughtCount?: number;
+				totalCoursesTaught?: number;
 				resourceCount?: number;
 				resourceTypeCount?: number;
 			};
 			studentsTaught?: { year: number; total: number }[];
-			resourceDiversityReport?: { type: string; total: number }[]; // TODO: Move resourceCount et al to this
+			resourceDiversity?: { type: string; total: number }[]; // TODO: Move resourceCount et al to this
 		};
 	} = $props();
 
@@ -54,7 +54,7 @@
 		<dl class="stats">
 			<div class="stat">
 				<dt>Courses Taught</dt>
-				<dd>{reports.general.coursesTaughtCount ?? '0'}</dd>
+				<dd>{reports.general.totalCoursesTaught ?? '0'}</dd>
 			</div>
 			<div class="stat">
 				<dt>Resources Used</dt>
@@ -104,10 +104,10 @@
 		{/if}
 	{/if}
 
-	{#if reports && reports['resourceDiversityReport']}
+	{#if reports && reports['resourceDiversity']}
 		<h3>Resources Used</h3>
 
-		{#if reports.resourceDiversityReport.length === 0}
+		{#if reports.resourceDiversity.length === 0}
 			<p>No results found...</p>
 		{:else}
 			<div class="w-fit overflow-hidden rounded-lg border border-gray-200 shadow-sm">
@@ -119,7 +119,7 @@
 						</tr>
 					</thead>
 					<tbody class="divide-y divide-gray-200 bg-white">
-						{#each reports.resourceDiversityReport as row (row.type)}
+						{#each reports.resourceDiversity as row (row.type)}
 							<tr class="hover:bg-gray-50">
 								<td class="px-4 py-3 font-medium text-gray-900">{row.type}</td>
 								<td class="px-4 py-3 text-right text-gray-700 tabular-nums">{row.total}</td>

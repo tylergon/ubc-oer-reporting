@@ -1,9 +1,9 @@
 import {
-	resourceCount,
+	resourceCountReport as resourceCountReport,
 	resourceDiversityReport,
-	resourceTypeCount,
+	resourceTypeCountReport,
 	studentsTaughtReport,
-	totalCoursesTaught
+	totalCoursesTaughtReport
 } from '$lib/server/reports';
 import { findUser, getUserEmails } from '$lib/server/users.js';
 
@@ -17,22 +17,30 @@ async function getIndividualReports(email?: string) {
 	const user = await findUser(email);
 	if (!user) return null;
 
-	const results = await Promise.all([
+	// Fetch reports in parallel
+	const [
+		studentsTaught,
+		totalCoursesTaught,
+		resourceCount,
+		resourceTypeCount,
+		resourceDiversity,
+	] = await Promise.all([
 		studentsTaughtReport(user),
-		totalCoursesTaught(user),
-		resourceCount(user),
-		resourceTypeCount(user),
+		totalCoursesTaughtReport(user),
+		resourceCountReport(user),
+		resourceTypeCountReport(user),
 		resourceDiversityReport(user)
 	]);
 
+	// Return Individual Reports to FE
 	return {
-		studentsTaught: results[0],
+		studentsTaught,
+		resourceDiversity,
 		general: {
-			coursesTaughtCount: results[1],
-			resourceCount: results[2],
-			resourceTypeCount: results[3]
+			totalCoursesTaught,
+			resourceCount,
+			resourceTypeCount,
 		},
-		resourceDiversityReport: results[4]
 	};
 }
 

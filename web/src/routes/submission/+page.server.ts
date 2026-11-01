@@ -2,18 +2,20 @@ import { fail } from '@sveltejs/kit';
 import type { Actions } from './$types';
 import { addResources, isResourceInput } from '$lib/server/resources';
 import { addCourses, isCourse as isCourseInput } from '$lib/server/courses';
-import { getUser as getUser } from '$lib/server/users';
+import { getUser as getUser } from '$lib/server/users'; 
 
 export const actions: Actions = {
 	default: async ({ request }) => {
+		console.log("Processing...")
+
 		const raw = await request.formData();
 		if (!raw) {
-			return fail(400);
+			return fail(400, { 'error': 'Expected form data' });
 		}
 
 		const payload = raw.get('payload');
 		if (!payload || typeof payload !== 'string') {
-			return fail(400);
+			return fail(400, { 'error': 'Could not parse payload' });
 		}
 
 		const data = JSON.parse(payload);
@@ -44,7 +46,7 @@ export const actions: Actions = {
 			}
 		} catch (err) {
 			console.error('Failed', err);
-			return fail(400);
+			return fail(400, { 'error': 'Could not process request' });
 		}
 
 		return { success: true };
