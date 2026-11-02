@@ -8,6 +8,8 @@ services:
     env_file: ./web/.env
     restart: unless-stopped
 
+  # Internal database for testing
+
   # db:
   #   image: docker.io/library/postgres:16-alpine
   #   environment:
