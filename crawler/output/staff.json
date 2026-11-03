@@ -1,0 +1,14 @@
+[
+    {
+        "name": "S. McHool",
+        "rank": "Professor",
+        "faculty_id": "example-school",
+        "unit_id": ""
+    },
+    {
+        "name": "F. Aculty",
+        "rank": "Associate Professor",
+        "faculty_id": "example-faculty",
+        "unit_id": "example-unit"
+    },
+]
