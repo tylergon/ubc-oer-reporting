@@ -84,11 +84,10 @@ The below clode block outlines the upload process for data
 The reporting dashboard uses SvelteKit's [data loading functionality](https://svelte.dev/docs/kit/load) to aggregate reports. When the user opens the page, they select a type of report.
 
 ```
-1. src/routes/reporting/+page.svelte        # Basic UI
-2. src/routes/reporting/components/IndividualReport.svelte
-                                            # Individualized report UI
-3. src/routes/reporting/+page.server.ts     # Orchestrates data fetch
-4. src/lib/server/reporting.ts              # Database aggregation queries
+1. src/routes/reporting/+page.svelte                        # Basic UI
+2. src/routes/reporting/components/IndividualReport.svelte  # Individualized report UI
+3. src/routes/reporting/+page.server.ts                     # Orchestrates data fetch
+4. src/lib/server/reporting.ts                              # Database aggregation queries
 ``` 
 
 The reporting page's server file `+page.server.ts` orchestrates report generation while `lib/server/reporting.ts` contains implementations for aggregating of report generating queries. For example, the workflow for adding a new report to the `IndividualReport` component includes:
